@@ -1,0 +1,125 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Samle splunk</a>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Sign out</a>
+    </li>
+  </ul>
+</nav>
+<div class="container-fluid">
+  <main role="main" class="col-md-11 ml-sm-auto col-lg-11 pt-2 px-1">
+      <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <h5 class="card-title pt-2 px-3">Source Type (Column chart) </h5>
+              <div class="card-body">
+                  <ngx-charts-bar-vertical
+                  [view]="view"
+                  [scheme]="colorScheme"
+                  [results]="single"
+                  [gradient]="gradient"
+                  [xAxis]="showXAxis"
+                  [yAxis]="showYAxis"
+                  [legend]="showLegend"
+                  [showXAxisLabel]="showXAxisLabel"
+                  [showYAxisLabel]="showYAxisLabel"
+                  [xAxisLabel]="xAxisLabel"
+                  [yAxisLabel]="yAxisLabel"
+                  (select)="onSelect($event)">
+                </ngx-charts-bar-vertical>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+                <h5 class="card-title pt-2 px-3">Source Type (Bar chart) </h5>
+              <div class="card-body">
+                  <ngx-charts-bar-horizontal
+                  [view]="view"
+                  [scheme]="colorScheme"
+                  [results]="single"
+                  [gradient]="gradient"
+                  [xAxis]="showXAxis"
+                  [yAxis]="showYAxis"
+                  [legend]="showLegend"
+                  [showXAxisLabel]="showXAxisLabel"
+                  [showYAxisLabel]="showYAxisLabel"
+                  [xAxisLabel]="yAxisLabel"
+                  [yAxisLabel]="xAxisLabel"
+                  (select)="onSelect($event)">
+                </ngx-charts-bar-horizontal>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-2 ">
+            <div class="col-sm-4">
+              <div class="card">
+                <h5 class="card-title pt-2 px-3">Source Type (Pie chart) </h5>
+                <div class="card-body">
+                    <ngx-charts-pie-chart
+                    [view]="view2"
+                    [scheme]="pieColorScheme"
+                    [results]="single"
+                    [legend]="showLegend"
+                    [explodeSlices]="explodeSlices"
+                    [labels]="showLabels"
+                    [doughnut]="doughnut"
+                    [gradient]="gradient"
+                    (select)="onSelect($event)">
+                  </ngx-charts-pie-chart>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card">
+                <h5 class="card-title pt-2 px-3">Source Type (Line chart) </h5>
+                <div class="card-body">
+                    <ngx-charts-line-chart
+                    [view]="view2"
+                    [scheme]="colorScheme"
+                    [results]="multi"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel"
+                    [autoScale]="autoScale"
+                    (select)="onSelect($event)">
+                  </ngx-charts-line-chart>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                  <h5 class="card-title pt-2 px-3">Source Type (Area chart) </h5>
+                  <div class="card-body">
+                      <ngx-charts-area-chart
+                      [view]="view2"
+                      [scheme]="colorScheme"
+                      [results]="multi"
+                      [gradient]="gradient"
+                      [xAxis]="showXAxis"
+                      [yAxis]="showYAxis"
+                      [legend]="showLegend"
+                      [showXAxisLabel]="showXAxisLabel"
+                      [showYAxisLabel]="showYAxisLabel"
+                      [xAxisLabel]="xAxisLabel"
+                      [yAxisLabel]="yAxisLabel"
+                      [autoScale]="autoScale"
+                      (select)="onSelect($event)">
+                    </ngx-charts-area-chart>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+  </main>
+  
+</div>
+
+<router-outlet></router-outlet>
